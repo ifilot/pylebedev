@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# build folder
+build/*
+dist/*
+wheelhouse/*
+test.py
+nose_debug
+anaconda-upload/*

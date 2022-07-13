@@ -1,0 +1,42 @@
+package:
+  name: "pylebedev"
+  version: "0.1.1.0"
+
+source:
+  path: .
+
+build:
+  include_recipe: False
+  noarch: python
+
+requirements:
+  build:
+    - numpy>=1.16
+    - python>=3.9
+
+  host:
+    - pip
+    - python>=3.9
+    - setuptools
+    - numpy>=1.16
+
+  run:
+    - python>=3.9
+    - numpy>=1.16
+
+test:
+  requires:
+    - numpy
+    - setuptools
+    - nose
+  source_files:
+    - tests/*.py
+  commands:
+    - nosetests tests
+
+about:
+  home: https://github.com/ifilot/pyqint
+  license: GPL3
+  license_family: GPL
+  summary: Python package for obtainin Lebedev quadrature integration points and weights
+  description: See the package README.md for more information.

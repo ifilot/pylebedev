@@ -1,0 +1,4 @@
+FROM conda/miniconda3
+RUN apt update
+RUN conda install -y conda-build
+RUN apt -y install git
