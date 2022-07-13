@@ -35,7 +35,7 @@ test:
     - nosetests tests
 
 about:
-  home: https://github.com/ifilot/pyqint
+  home: https://github.com/ifilot/pylebedev
   license: GPL3
   license_family: GPL
   summary: Python package for obtainin Lebedev quadrature integration points and weights
