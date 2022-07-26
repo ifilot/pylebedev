@@ -2,7 +2,7 @@
 
 ## Purpose
 
-PyQInt is a Python package for calculating one- and two-electron integrals as encountered in electronic structure calculations. Since integral evaluation can be quite computationally intensive, they are programmed in C++ and connected to Python using Cython.
+PyLebedev is a python package that stores Lebedev quadrature coefficients for integration over the unit sphere.
 
 ## Installation
 
