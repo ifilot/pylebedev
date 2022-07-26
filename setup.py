@@ -24,7 +24,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name=PKG,
-    version="0.1.1.0",
+    version=verstr,
     author="Ivo Filot",
     author_email="ivo@ivofilot.nl",
     description="Python package for obtaining Lebedev quadrature points and coefficients",
