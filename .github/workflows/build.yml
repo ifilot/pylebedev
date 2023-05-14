@@ -62,6 +62,8 @@ jobs:
     steps:
       - name: Prepare build environment
         run: conda install -y conda-build
+      - name: Checkout repo
+        uses: actions/checkout@v3
       - name: Build
         shell: bash -l {0}
         run: |
