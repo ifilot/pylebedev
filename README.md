@@ -14,10 +14,9 @@ PyLebedev is a python package that stores Lebedev quadrature coefficients for in
 
 ### Anaconda
 
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/version.svg)](https://anaconda.org/ifilot/pylebedev)
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/platforms.svg)](https://anaconda.org/ifilot/pylebedev)
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/downloads.svg)](https://anaconda.org/ifilot/pylebedev)
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/installer/conda.svg)](https://conda.anaconda.org/ifilot)
+[![Anaconda Version](https://anaconda.org/ifilot/pylebedev/badges/version.svg)](https://anaconda.org/ifilot/pylebedev)
+[![Anaconda Platforms](https://anaconda.org/ifilot/pylebedev/badges/platforms.svg)](https://anaconda.org/ifilot/pylebedev)
+[![Anaconda Downloads](https://anaconda.org/ifilot/pylebedev/badges/downloads.svg)](https://anaconda.org/ifilot/pylebedev)
 
 Open Anaconda prompt and type
 
