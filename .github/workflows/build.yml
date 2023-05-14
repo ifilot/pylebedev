@@ -61,7 +61,7 @@ jobs:
 
     steps:
       - name: Prepare build environment
-        run: apt update && conda install -y conda-build && apt -y install git
+        run: conda install -y conda-build
       - name: Build
         shell: bash -l {0}
         run: |
