@@ -1,5 +1,11 @@
 # PyLebedev
 
+[![C/C++ CI](https://github.com/ifilot/pylebedev/actions/workflows/build.yml/badge.svg)](https://github.com/ifilot/pylebedev/actions/workflows/build.yml)
+[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/version.svg)](https://anaconda.org/ifilot/pylebedev)
+[![PyPI](https://img.shields.io/pypi/v/pylebedev?color=green)](https://pypi.org/project/pylebedev/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+
 ## Purpose
 
 PyLebedev is a python package that stores Lebedev quadrature coefficients for integration over the unit sphere.
@@ -8,10 +14,9 @@ PyLebedev is a python package that stores Lebedev quadrature coefficients for in
 
 ### Anaconda
 
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/version.svg)](https://anaconda.org/ifilot/pylebedev)
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/platforms.svg)](https://anaconda.org/ifilot/pylebedev)
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/downloads.svg)](https://anaconda.org/ifilot/pylebedev)
-[![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/installer/conda.svg)](https://conda.anaconda.org/ifilot)
+[![Anaconda Version](https://anaconda.org/ifilot/pylebedev/badges/version.svg)](https://anaconda.org/ifilot/pylebedev)
+[![Anaconda Platforms](https://anaconda.org/ifilot/pylebedev/badges/platforms.svg)](https://anaconda.org/ifilot/pylebedev)
+[![Anaconda Downloads](https://anaconda.org/ifilot/pylebedev/badges/downloads.svg)](https://anaconda.org/ifilot/pylebedev)
 
 Open Anaconda prompt and type
 
@@ -21,9 +26,9 @@ conda install -c ifilot pylebedev
 
 ### PyPi
 
-[![PyPI](https://img.shields.io/pypi/v/pylebedev?color=green&style=flat-square)](https://pypi.org/project/pylebedev/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/pypi?style=flat-square)](https://pypi.org/project/pylebedev/)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pylebedev?style=flat-square)
+[![PyPI](https://img.shields.io/pypi/v/pylebedev?color=green)](https://pypi.org/project/pylebedev/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/pypi)](https://pypi.org/project/pylebedev/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pylebedev)
 
 
 Open a terminal and type
@@ -34,7 +39,7 @@ pip install pylebedev
 
 ## Usage
 
-```
+```python
 from pylebedev import PyLebedev
 import numpy as np
 
