@@ -2,6 +2,10 @@
     white-space: normal !important;
 }
 
+.wy-side-nav-search {
+    background: #ff9595;
+}
+
 .icon.icon-home {
     color: #FFFFFF;
 }
