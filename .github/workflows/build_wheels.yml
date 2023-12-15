@@ -1,0 +1,85 @@
+name: Build PyPI packages
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - master
+      - develop
+    tags:
+      - "v**"
+  release:
+    types:
+      - published
+
+jobs:
+  check-version-strings:
+    runs-on: ubuntu-latest
+    container: python:3.9.18-slim-bullseye
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+      - name: Test versions
+        run: |
+          python testversion.py
+
+  build_wheels:
+    name: Build wheels
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build wheels
+        run: |
+          python --version ; pip --version  # for debugging purposes
+          pip install virtualenv
+          virtualenv venv
+          source venv/bin/activate
+          pip install build
+          python -m build
+      - uses: actions/upload-artifact@v3
+        with:
+          path: ./dist/*.whl
+
+  build_sdist:
+    name: Build source distribution
+    needs: [check-version-strings]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Prepare build environment
+        run: |
+          python --version ; pip --version  # for debugging purposes
+          pip install virtualenv
+          virtualenv venv
+          source venv/bin/activate
+          pip install build
+      - uses: actions/checkout@v4
+
+      - name: Build sdist
+        run: pipx run build --sdist
+
+      - uses: actions/upload-artifact@v3
+        with:
+          path: dist/*.tar.gz
+
+  upload_pypi:
+    needs: [build_wheels, build_sdist]
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifact
+          path: dist
+
+      - uses: pypa/gh-action-pypi-publish@release/v1

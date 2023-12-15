@@ -1,6 +1,6 @@
 package:
   name: "pylebedev"
-  version: "1.0.0"
+  version: "1.0.1"
 
 source:
   path: .
@@ -28,11 +28,11 @@ test:
   requires:
     - numpy
     - setuptools
-    - nose
+    - pytest
   source_files:
     - tests/*.py
   commands:
-    - nosetests tests
+    - pytest tests/*.py
 
 about:
   home: https://github.com/ifilot/pylebedev

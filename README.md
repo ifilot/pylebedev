@@ -1,6 +1,7 @@
 # PyLebedev
 
-[![C/C++ CI](https://github.com/ifilot/pylebedev/actions/workflows/build.yml/badge.svg)](https://github.com/ifilot/pylebedev/actions/workflows/build.yml)
+[![C/C++ CI](https://github.com/ifilot/pylebedev/actions/workflows/build_conda.yml/badge.svg)](https://github.com/ifilot/pylebedev/actions/workflows/build_conda.yml)
+[![C/C++ CI](https://github.com/ifilot/pylebedev/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/ifilot/pylebedev/actions/workflows/build_wheels.yml)
 [![Anaconda-Server Badge](https://anaconda.org/ifilot/pylebedev/badges/version.svg)](https://anaconda.org/ifilot/pylebedev)
 [![PyPI](https://img.shields.io/pypi/v/pylebedev?color=green)](https://pypi.org/project/pylebedev/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -8,7 +9,7 @@
 
 ## Purpose
 
-PyLebedev is a python package that stores Lebedev quadrature coefficients for integration over the unit sphere.
+PyLebedev is a python package that stores [Lebedev quadrature](https://en.wikipedia.org/wiki/Lebedev_quadrature) coefficients for integration over the unit sphere.
 
 ## Installation
 
