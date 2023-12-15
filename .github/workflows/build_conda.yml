@@ -48,14 +48,10 @@ jobs:
           environment-file: environment.yml
           python-version: 3.8
           auto-activate-base: false
-      - name: Set-up MSVC toolchain
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: amd64
       - name: Build
         shell: bash -l {0}
         run: |
-          echo $PATH
+          conda install conda-build
           conda build . --no-include-recipe
       - name: Archive packages
         uses: actions/upload-artifact@v3
@@ -104,8 +100,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential
       - name: Set-up miniconda
         uses: conda-incubator/setup-miniconda@v2
         with:
