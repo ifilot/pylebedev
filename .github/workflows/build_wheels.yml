@@ -29,28 +29,38 @@ jobs:
           python testversion.py
 
   build_wheels:
-    name: Build wheels on ${{ matrix.os }}
-    needs: [check-version-strings]
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-22.04, windows-2022, macos-11]
+    name: Build wheels
+
+    runs-on: ubuntu-latest
 
     steps:
+      - name: Prepare build environment
+        run: |
+          python --version ; pip --version  # for debugging purposes
+          pip install virtualenv
+          virtualenv venv
+          source venv/bin/activate
+          pip install build
       - uses: actions/checkout@v4
-
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2.16.2
-
+        run: python -m build
       - uses: actions/upload-artifact@v3
         with:
-          path: ./wheelhouse/*.whl
+          path: ./dist/*.whl
 
   build_sdist:
     name: Build source distribution
     needs: [check-version-strings]
     runs-on: ubuntu-latest
+
     steps:
+      - name: Prepare build environment
+        run: |
+          python --version ; pip --version  # for debugging purposes
+          pip install virtualenv
+          virtualenv venv
+          source venv/bin/activate
+          pip install build
       - uses: actions/checkout@v4
 
       - name: Build sdist
