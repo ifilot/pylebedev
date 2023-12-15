@@ -1,46 +1,27 @@
 # Compilation details
 
-## Compiling the Anaconda package on Windows
+## Compilation and testing under Linux Debian / Ubuntu
 
-Install Microsoft Visual Studio Community Edition and modify the version
-numbers and directory paths as provided in `setup.py`.
+Compile locally
 
-Start the compilation with
-```
-conda build .
+```python
+python3 -m build
 ```
 
-## Compilation for Linux/Anaconda on Windows using Docker
+and install it locally
 
-For the Windows terminal, I use Git Bash as readily available in
-Git for Windows. Furthermore, make sure that Docker is installed.
-Construct the build environment by building the Docker image
-```
-docker build . -t pylebedev-anaconda -f Dockerfile-linux-anaconda
+```python
+pip3 install dist/pydft-<version>-py3-none-any.whl
 ```
 
-Modify the `build_docker_linux_anaconda.sh` file and set the `ROOT` variable to the root
-folder of this repository. Next, run the `docker_setup.sh` script
+and finally test it
 
-```
-./build_docker_linux_anaconda.sh
-```
-
-After compilation, you will automatically be prompted whether to upload
-the freshly generated packages.
-
-## Compiling for Linux/PyPi on Windows using Docker
-
-For the Windows terminal, I use Git Bash as readily available in
-Git for Windows. Furthermore, make sure that Docker is installed.
-Construct the build environment by building the Docker image
-```
-docker build . -t pylebedev-pypi -f Dockerfile-linux-pypi
+```python
+python3 -m pytest tests/*
 ```
 
-Modify the `build_docker_linux_pypi.sh` file and set the `ROOT` variable to the root
-folder of this repository. Next, run the `docker_setup.sh` script
+## Outputting content of Python Wheel file
 
-```
-./build_docker_linux_pypi.sh
+```bash
+unzip -l dist/*.whl
 ```

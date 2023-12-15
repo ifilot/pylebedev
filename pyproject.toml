@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pylebedev"
+version = "1.0.1"
+authors = [
+  { name="Ivo Filot", email="i.a.w.filot@tue.nl" }
+]
+maintainers = [
+    { name="Ivo Filot", email="i.a.w.filot@tue.nl" },
+]
+description = "pylebedev"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "GPL-3.0-or-later"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pylebedev*"]
+
+[tool.conda.environment]
+channels = [
+    "ifilot",
+    "conda-forge",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ifilot/pylebedev"
+"Bug Tracker" = "https://github.com/ifilot/pylebedev/issues"
