@@ -31,7 +31,8 @@ jobs:
   build_wheels:
     name: Build wheels
 
-    runs-on: python:3.9.18-slim-bullseye
+    runs-on: ubuntu-latest
+    container: python:3.9.18-slim-bullseye
 
     steps:
       - name: Prepare build environment
@@ -51,7 +52,9 @@ jobs:
   build_sdist:
     name: Build source distribution
     needs: [check-version-strings]
-    runs-on: python:3.9.18-slim-bullseye
+    runs-on: ubuntu-latest
+    container: python:3.9.18-slim-bullseye
+    
     steps:
       - name: Prepare build environment
         run: |
