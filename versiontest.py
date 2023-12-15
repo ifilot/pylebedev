@@ -22,7 +22,7 @@ def get_version_projecttoml():
     """
     Extract the version string from the pyproject.toml file
     """
-    pattern = re.compile(r'^version\s*=\s*"(\d+\.\d+.\d+)"\s*$')
+    pattern = re.compile(r'^\s*version\s*=\s*"(\d+\.\d+.\d+)"\s*$')
     
     f = open(os.path.join(ROOT, 'pyproject.toml'))
     lines = f.readlines()
@@ -38,9 +38,9 @@ def get_version_versionpy():
     """
     Extract the version string from the _version.py file
     """
-    pattern = re.compile(r'^__version__\s*=\s*\'(\d+\.\d+.\d+)\'\s*$')
+    pattern = re.compile(r'^__version__\s*=\s*[\'"](\d+\.\d+.\d+)[\'"]\s*$')
     
-    f = open(os.path.join(ROOT, 'pydft', '_version.py'))
+    f = open(os.path.join(ROOT, 'pylebedev', '_version.py'))
     lines = f.readlines()
     for line in lines:
         match = re.match(pattern, line)
