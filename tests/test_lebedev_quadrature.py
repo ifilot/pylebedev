@@ -1,5 +1,4 @@
 import unittest
-from nose.tools import nottest
 from pylebedev import PyLebedev
 import numpy as np
 
@@ -36,7 +35,6 @@ class TestLebedevQuadrature(unittest.TestCase):
         np.testing.assert_equal(leblib.get_num_points(7), 26)
         np.testing.assert_equal(leblib.get_num_points(19), 146)
 
-@nottest
 def tfunc(x,y,z):
     """
     Trial function to test
