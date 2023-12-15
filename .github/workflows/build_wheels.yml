@@ -34,16 +34,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Prepare build environment
+      - uses: actions/checkout@v4
+      - name: Build wheels
         run: |
           python --version ; pip --version  # for debugging purposes
           pip install virtualenv
           virtualenv venv
           source venv/bin/activate
           pip install build
-      - uses: actions/checkout@v4
-      - name: Build wheels
-        run: python -m build
+          python -m build
       - uses: actions/upload-artifact@v3
         with:
           path: ./dist/*.whl

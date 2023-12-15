@@ -28,11 +28,11 @@ test:
   requires:
     - numpy
     - setuptools
-    - nose
+    - pytest
   source_files:
     - tests/*.py
   commands:
-    - nosetests tests
+    - pytest tests/*.py
 
 about:
   home: https://github.com/ifilot/pylebedev
