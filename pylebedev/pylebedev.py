@@ -15,7 +15,7 @@ class PyLebedev:
             order = os.path.basename(file).split('_')[1].split('.')[0]
             self.__datasource[order] = file
             
-    def get_points_and_weights(self, order, solid_angles=False):
+    def get_points_and_weights(self, order:int, solid_angles:bool=False):
         """
         Return Lebedev coefficients
         """
@@ -41,7 +41,7 @@ class PyLebedev:
 
             return np.array(np.vstack([x,y,z])).transpose(), weights
         
-    def get_num_points(self, order):
+    def get_num_points(self, order:int) -> list[int]:
         """
         Get number of points from Lebedev order
         """
@@ -52,14 +52,18 @@ class PyLebedev:
             data = np.loadtxt(self.__datasource['%03i' % order])
             return data.shape[0]
         
-    def get_orders_list(self):
+    def get_orders_list(self) -> list[int]:
         """
         Get the orders
         """
-        return [int(i) for i in self.__datasource.keys()]
+        res = [int(i) for i in self.__datasource.keys()]
+        res.sort()
+        return res
     
-    def get_nrpoints_list(self):
+    def get_nrpoints_list(self) -> list[int]:
         """
         Get list of number of integration points per order
         """
-        return [self.get_num_points(o) for o in self.get_orders_list()]
+        res = [int(self.get_num_points(o)) for o in self.get_orders_list()]
+        res.sort()
+        return res
