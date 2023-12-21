@@ -1,6 +1,13 @@
 import unittest
-from pylebedev import PyLebedev
 import numpy as np
+
+import os,sys
+
+# add a reference to load the module
+ROOT = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(ROOT, '..'))
+
+from pylebedev import PyLebedev
 
 class TestLebedevQuadrature(unittest.TestCase):
     """
