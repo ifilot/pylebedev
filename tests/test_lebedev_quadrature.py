@@ -1,6 +1,6 @@
 import unittest
-from pylebedev import PyLebedev
 import numpy as np
+from pylebedev import PyLebedev
 
 class TestLebedevQuadrature(unittest.TestCase):
     """
@@ -34,6 +34,27 @@ class TestLebedevQuadrature(unittest.TestCase):
         
         np.testing.assert_equal(leblib.get_num_points(7), 26)
         np.testing.assert_equal(leblib.get_num_points(19), 146)
+
+    def test_weights_unity(self):
+        """
+        Check that the sum of all the weights adds up to unity
+        """
+        # build library
+        leblib = PyLebedev()
+
+        for o in leblib.get_orders_list():
+            sumweights = np.sum(leblib.get_points_and_weights(o, solid_angles=True)[1])
+            np.testing.assert_almost_equal(sumweights, 1.0)
+
+    def test_exceptions(self):
+        # build library
+        leblib = PyLebedev()
+        
+        # try to get points for an order that does not exist
+        self.assertRaises(Exception, leblib.get_points_and_weights, 1)
+        
+        # try to get number of points for an order that does not exist
+        self.assertRaises(Exception, leblib.get_num_points, 1)
 
 def tfunc(x,y,z):
     """
