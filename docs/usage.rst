@@ -34,6 +34,11 @@ Obtaining points and weights
 
     Distribution of points for the 41th order Lebedev quadrature
 
+.. note::
+
+    To get a list of possible orders and the associated number of sampling points
+    per order, see :ref:`this section <nrorderpoints>`.
+
 The grid points (positions) and the weights are given as a :code:`Nx3`` two-dimensional array
 and an :code:`N`-element vector. Using the :code:`shape` functionality of :code:`numpy`,
 we can readily see this as illustrated by the script below.
@@ -96,3 +101,42 @@ An example of how one would evaluate the integral is provided below.
 .. code:: python 
 
     integral = 4.0 * np.pi * np.einsum('i,i', w, f(r[:,0],r[:,1],r[:,2]))
+
+.. _nrorderpoints:
+
+Getting list of available orders and integration points
+-------------------------------------------------------
+
+To get the list of available orders, one can run
+
+.. code:: python
+
+    # import modules
+    from pylebedev import PyLebedev
+    import numpy as np
+
+    # build library
+    leblib = PyLebedev()
+
+    print(leblib.get_orders_list())
+
+which outputs::
+
+    [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 35, 41, 47, 53, 59, 65, 71, 77, 83, 89, 95, 101, 107, 113, 119, 125, 131])
+        
+In a similar fashion, to get the number of sampling points per order, one can run
+
+.. code:: python
+
+    # import modules
+    from pylebedev import PyLebedev
+    import numpy as np
+
+    # build library
+    leblib = PyLebedev()
+
+    print(leblib.get_nrpoints_list())
+
+which yields the following output::
+        
+    [6, 14, 26, 38, 50, 74, 86, 110, 146, 170, 194, 230, 266, 302, 350, 434, 590, 770, 974, 1202, 1454, 1730, 2030, 2354, 2702, 3074, 3470, 3890, 4334, 4802, 5294, 5810])

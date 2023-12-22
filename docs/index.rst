@@ -1,6 +1,17 @@
 PyLebedev: Lebedev quadrature coefficients
 ==========================================
 
+.. image:: https://img.shields.io/github/v/tag/ifilot/pylebedev?label=version
+   :alt: GitHub tag (latest SemVer)
+.. image:: https://github.com/ifilot/pylebedev/actions/workflows/build_wheels.yml/badge.svg
+   :target: https://github.com/ifilot/pylebedev/actions/workflows/build_wheels.yml
+.. image:: https://github.com/ifilot/pylebedev/actions/workflows/build_conda.yml/badge.svg
+   :target: https://github.com/ifilot/pylebedev/actions/workflows/build_conda.yml
+.. image:: https://codecov.io/gh/ifilot/pylebedev/graph/badge.svg?token=RA2HJ0QA01 
+   :target: https://codecov.io/gh/ifilot/pylebedev
+.. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
+   :target: https://www.gnu.org/licenses/gpl-3.0
+
 :program:`PyLebedev` is a pure-Python package for handling integration of function
 over the surface of a unit sphere by means of `Lebedev quadrature <https://en.wikipedia.org/wiki/Lebedev_quadrature>`_.
 
@@ -42,6 +53,80 @@ A simple example how PyLebedev works is given below
 The result of this code is::
 
    Integral: 19.388115 vs Exact: 19.388115
+
+The set of available orders and corresponding number of sampling points is given
+in the table below.
+
+.. list-table:: Integration order and number of sampling points
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Order
+     - Number of points
+   * - 3
+     - 6
+   * - 5
+     - 14
+   * - 7
+     - 26
+   * - 9
+     - 38
+   * - 11
+     - 50
+   * - 13
+     - 74
+   * - 15
+     - 86
+   * - 17
+     - 110
+   * - 19
+     - 146
+   * - 21
+     - 170
+   * - 23
+     - 194
+   * - 25
+     - 230
+   * - 27
+     - 266
+   * - 29
+     - 302
+   * - 31
+     - 350
+   * - 35
+     - 434
+   * - 41
+     - 590
+   * - 47
+     - 770
+   * - 53
+     - 974
+   * - 59
+     - 1202
+   * - 65
+     - 1454
+   * - 71
+     - 1730
+   * - 77
+     - 2030
+   * - 83
+     - 2354
+   * - 89
+     - 2702
+   * - 95
+     - 3074
+   * - 101
+     - 3470
+   * - 107
+     - 3890
+   * - 113
+     - 4334
+   * - 119
+     - 4802
+   * - 125
+     - 5294
+   * - 131
+     - 5810
 
 :program:`PyLebedev` has been developed at the Eindhoven University of Technology,
 Netherlands. :program:`PyLebedev` and its development are hosted on `github
