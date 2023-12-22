@@ -92,6 +92,7 @@ jobs:
           pip install dist/pylebedev*.whl
           pip install pytest coverage
           coverage run -m unittest tests/*.py
+          coverage xml
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
