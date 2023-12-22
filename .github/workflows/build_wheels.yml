@@ -91,12 +91,7 @@ jobs:
           source venv/bin/activate
           pip install dist/pylebedev*.whl
           pip install pytest coverage
-          coverage run -m pytest tests/*.py
-          coverage report pylebedev/pylebedev.py > report.txt
-          coverage html pylebedev/pylebedev.py
-      - uses: actions/upload-artifact@v3
-        with:
-          path: ./htmlcov/*
+          coverage run -m unittest tests/*.py
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
