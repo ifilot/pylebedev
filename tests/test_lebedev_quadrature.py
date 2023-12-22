@@ -52,6 +52,9 @@ class TestLebedevQuadrature(unittest.TestCase):
         
         # try to get points for an order that does not exist
         self.assertRaises(Exception, leblib.get_points_and_weights, 1)
+        
+        # try to get number of points for an order that does not exist
+        self.assertRaises(Exception, leblib.get_num_points, 1)
 
 def tfunc(x,y,z):
     """
